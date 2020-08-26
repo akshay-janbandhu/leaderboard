@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('players', 'PlayerController@index');
+Route::get('players/{id}', 'PlayerController@detail');
+Route::post('players/{id}/points', 'PlayerController@points');
+    
